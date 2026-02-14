@@ -1,4 +1,5 @@
 import argparse
+import certifi
 import hashlib
 import json
 import logging
@@ -6,6 +7,7 @@ import os
 import secrets
 import shlex
 import shutil
+import ssl
 import subprocess
 import urllib
 import urllib.parse
@@ -158,7 +160,7 @@ def download_patch() -> UpdateResult:
         return UpdateResult.ERROR
     try:
         # unzip
-        with urllib.request.urlopen(release_url) as download:
+        with urllib.request.urlopen(release_url, context=ssl.create_default_context(cafile=certifi.where())) as download:
             with zipfile.ZipFile(BytesIO(download.read())) as zf:
                 zf.extractall()
         if not verify_game_version():
