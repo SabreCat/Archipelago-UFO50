@@ -1,0 +1,92 @@
+{
+    "Deliver 5 Croc Jerky": {
+        "type": "delivery",
+        "blueprint": "Croc Jerky",
+        "amount": 5,
+        "minLevel": 2
+    },
+    "Deliver 5 Boar Jerky": {
+        "type": "delivery",
+        "blueprint": "Boar Jerky",
+        "amount": 5,
+        "minLevel": 2
+    },
+    "Deliver 5 Goat Jerky": {
+        "type": "delivery",
+        "blueprint": "Goat Jerky",
+        "amount": 5,
+        "minLevel": 2
+    },
+    "Deliver 5 Crab Jerky": {
+        "type": "delivery",
+        "blueprint": "Crab Jerky",
+        "amount": 5,
+        "minLevel": 5
+    },
+    "Deliver 5 Bear Jerky": {
+        "type": "delivery",
+        "blueprint": "Bear Jerky",
+        "amount": 5,
+        "minLevel": 2
+    },
+    "Deliver a Glowsphere": {
+        "type": "delivery",
+        "blueprint": "Glowsphere",
+        "minLevel": 5
+    },
+    "Deliver a Floating Glowsphere": {
+        "type": "delivery",
+        "blueprint": "Floating Glowsphere",
+        "minLevel": 15
+    },
+    "Deliver a Metal Folding Chair": {
+        "type": "delivery",
+        "blueprint": "FoldingChair",
+        "minLevel": 5
+    },
+    "Deliver a Love Injector": {
+        "type": "delivery",
+        "blueprint": "LoveTonic",
+        "minLevel": 8
+    },
+    "Deliver a Blaze Injector": {
+        "type": "delivery",
+        "blueprint": "BlazeTonic",
+        "minLevel": 8
+    },
+    "Deliver a Hulk Honey Injector": {
+        "type": "delivery",
+        "blueprint": "HulkHoneyTonic",
+        "minLevel": 8
+    },
+    "Deliver a Salve Injector": {
+        "type": "delivery",
+        "blueprint": "SalveTonic",
+        "minLevel": 6
+    },
+    "Deliver a Skulk Injector": {
+        "type": "delivery",
+        "blueprint": "SkulkTonic",
+        "minLevel": 8
+    },
+    "Deliver a Sphynx Salt Injector": {
+        "type": "delivery",
+        "blueprint": "SphynxSaltTonic",
+        "minLevel": 8
+    },
+    "Deliver a Shade Oil Injector": {
+        "type": "delivery",
+        "blueprint": "ShadeOilTonic",
+        "minLevel": 8
+    },
+    "Deliver a Ubernostrum Injector": {
+        "type": "delivery",
+        "blueprint": "UbernostrumTonic",
+        "minLevel": 12
+    },
+    "Deliver a Rubbergum Injector": {
+        "type": "delivery",
+        "blueprint": "RubbergumTonic",
+        "minLevel": 8
+    }
+}
