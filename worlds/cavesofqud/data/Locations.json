@@ -88,5 +88,25 @@
         "type": "delivery",
         "blueprint": "RubbergumTonic",
         "minLevel": 8
+    },
+    "Sheaf of tattered parchment": {
+        "type": "lore",
+        "blueprint": "Sheaf1",
+        "minLevel": 3
+    },
+    "Corpus Choliys": {
+        "type": "lore",
+        "blueprint": "Corpus",
+        "minLevel": 10
+    },
+    "Crumpled sheet of paper": {
+        "type": "lore",
+        "blueprint": "Sonnet",
+        "minLevel": 10
+    },
+    "Sheaf of bloodstained goatskin parchment": {
+        "type": "lore",
+        "blueprint": "BloodstainedSheaf",
+        "minLevel": 15
     }
 }
