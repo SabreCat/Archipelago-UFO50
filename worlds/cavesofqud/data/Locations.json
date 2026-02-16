@@ -108,5 +108,20 @@
         "type": "lore",
         "blueprint": "BloodstainedSheaf",
         "minLevel": 15
+    },
+    "Ruin of House Isner": {
+        "type": "artifact",
+        "blueprint": "Ruin of House Isner",
+        "minLevel": 10
+    },
+    "Stopsvalinn": {
+        "type": "artifact",
+        "blueprint": "Stopsvaalinn",
+        "minLevel": 15
+    },
+    "Kindrish": {
+        "type": "artifact",
+        "blueprint": "Kindrish",
+        "minLevel": 20
     }
 }

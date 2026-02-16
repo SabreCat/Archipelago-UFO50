@@ -56,7 +56,7 @@ def create_regions(world: "CoQWorld"):
 
     add_main_quests(world)
     add_side_quests(world)
-    add_delivery_quests(world)
+    add_static_locations(world)
 
 
 def add_main_quests(world: "CoQWorld"):
@@ -111,11 +111,12 @@ def add_side_quests(world: "CoQWorld"):
         region.locations += [quest_loc]
 
 
-def add_delivery_quests(world: "CoQWorld"):
+def add_static_locations(world: "CoQWorld"):
     for quest in [
         k
         for k in Locations.static_locations.values()
-        if k.type == "delivery" and k.min_level <= Quests.max_level(world)
+        if k.type == "delivery" or k.type == "lore" or (k.type == "artifact" and world.options.lost_artifacts)
+            and k.min_level <= Quests.max_level(world)
     ]:
         region = world.get_region(level_region_name(quest.min_level))
         quest_loc = Locations.CoQLocation(

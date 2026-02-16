@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, PerGameCommonOptions, Range
+from Options import Choice, PerGameCommonOptions, Range, Toggle
 
 MAX_MAX_LEVEL = 50
 MAX_LOCATIONS_PER_LEVEL = 10
@@ -59,10 +59,19 @@ class TrapPercentage(Range):
     default = 50
 
 
+class LostArtifacts(Toggle):
+    """
+    Adds some difficult-to-find named artifacts to the location pool, depending on max level.
+    There are semi-reliable methods for locating them, but they require some luck and/or grind!
+    """
+    display_name = "Lost Artifacts"
+
+
 @dataclass
 class CoQOptions(PerGameCommonOptions):
     goal: Goal
     locations_per_level: LocationsPerLevel
     extra_location_levels: ExtraLocationLevels
     trap_percentage: TrapPercentage
+    lost_artifacts: LostArtifacts
     # death_link: DeathLink
