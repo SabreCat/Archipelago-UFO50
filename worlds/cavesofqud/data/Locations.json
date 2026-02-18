@@ -92,36 +92,43 @@
     "Sheaf of tattered parchment": {
         "type": "lore",
         "blueprint": "Sheaf1",
-        "minLevel": 3
+        "minLevel": 3,
+        "region": "Red Rock"
     },
     "Corpus Choliys": {
         "type": "lore",
         "blueprint": "Corpus",
-        "minLevel": 10
+        "minLevel": 10,
+        "region": "Kyakukya"
     },
     "Crumpled sheet of paper": {
         "type": "lore",
         "blueprint": "Sonnet",
-        "minLevel": 10
+        "minLevel": 10,
+        "region": "Bey Lah"
     },
     "Sheaf of bloodstained goatskin parchment": {
         "type": "lore",
         "blueprint": "BloodstainedSheaf",
-        "minLevel": 15
+        "minLevel": 15,
+        "region": "Kyakukya"
     },
     "Ruin of House Isner": {
         "type": "artifact",
         "blueprint": "Ruin of House Isner",
-        "minLevel": 10
+        "minLevel": 10,
+        "region": "Level 10"
     },
     "Stopsvalinn": {
         "type": "artifact",
         "blueprint": "Stopsvaalinn",
-        "minLevel": 15
+        "minLevel": 15,
+        "region": "Grit Gate 2"
     },
     "Kindrish": {
         "type": "artifact",
         "blueprint": "Kindrish",
-        "minLevel": 20
+        "minLevel": 20,
+        "region": "Bethesda Susa"
     }
 }

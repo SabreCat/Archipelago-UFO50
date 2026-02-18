@@ -1,0 +1,143 @@
+{
+    "Fetch Argyve a Knickknack~Find a Knickknack": {
+        "region": "Joppa",
+        "main": true
+    },
+    "Fetch Argyve a Knickknack~Return to Argyve": {
+        "region": "Joppa 2",
+        "main": true
+    },
+    "Fetch Argyve Another Knickknack~Find Another Knickknack": {
+        "region": "Joppa 2",
+        "main": true
+    },
+    "Fetch Argyve Another Knickknack~Return to Argyve": {
+        "region": "Rust Wells",
+        "main": true
+    },
+    "Weirdwire Conduit... Eureka!~Find 200 Feet of Wire": {
+        "region": "Rust Wells",
+        "main": true
+    },
+    "Weirdwire Conduit... Eureka!~Return to Argyve": {
+        "region": "Grit Gate",
+        "main": true,
+        "level": 5
+    },
+    "A Canticle for Barathrum~Travel to Grit Gate": {
+        "region": "Grit Gate",
+        "main": true
+    },
+    "A Canticle for Barathrum~Locate the Barathrumite Enclave": {
+        "region": "Grit Gate",
+        "main": true
+    },
+    "A Canticle for Barathrum~Speak with the Barathrumites": {
+        "region": "Golgotha",
+        "main": true
+    },
+    "More Than a Willing Spirit~Travel to Golgotha": {
+        "region": "Golgotha",
+        "main": true
+    },
+    "More Than a Willing Spirit~Find a Dysfunctional Waydroid": {
+        "region": "Golgotha",
+        "main": true
+    },
+    "More Than a Willing Spirit~Repair the Waydroid": {
+        "region": "Grit Gate 2",
+        "main": true
+    },
+    "More Than a Willing Spirit~Return to Grit Gate": {
+        "region": "Grit Gate 2",
+        "main": true,
+        "level": 12
+    },
+    "Decoding the Signal~Get Q Girl's Instructions onto the Data Disk": {
+        "region": "Bethesda Susa",
+        "main": true
+    },
+    "Decoding the Signal~Locate the Mechanimist Compound at Bethesda Susa": {
+        "region": "Bethesda Susa",
+        "main": true
+    },
+    "Decoding the Signal~Decode the Signal": {
+        "region": "Bethesda Susa 2",
+        "main": true
+    },
+    "Decoding the Signal~Return to Grit Gate": {
+        "region": "Bethesda Susa 2",
+        "main": true,
+        "level": 20
+    },
+    "The Earl of Omonporch~Travel to Omonporch": {
+        "region": "Bethesda Susa 2",
+        "main": true
+    },
+    "The Earl of Omonporch~Secure the Spindle": {
+        "region": "Omonporch",
+        "main": true
+    },
+    "The Earl of Omonporch~Return to Grit Gate": {
+        "region": "Omonporch",
+        "main": true,
+        "level": 25
+    },
+    "A Call to Arms~Defend Grit Gate": {
+        "region": "Omonporch",
+        "main": true,
+        "level": 25
+    },
+    "What's Eating the Watervine?~Travel to Red Rock": {
+        "region": "Red Rock",
+        "main": false
+    },
+    "What's Eating the Watervine?~Find the Vermin": {
+        "region": "Red Rock",
+        "main": false
+    },
+    "What's Eating the Watervine?~Get a Corpse": {
+        "region": "Red Rock",
+        "main": false
+    },
+    "What's Eating the Watervine?~Return with the Corpse": {
+        "region": "Red Rock",
+        "main": false
+    },
+    "O Glorious Shekhinah!~Make a Pilgrimage to the Six Day Stilt": {
+        "region": "Joppa",
+        "main": false
+    },
+    "Raising Indrix~Find Mamon Souldrinker": {
+        "region": "Kyakukya",
+        "main": false
+    },
+    "Raising Indrix~Recover the Amaranthine Prism": {
+        "region": "Kyakukya",
+        "main": false
+    },
+    "Petals on the Wind~Investigate Bey Lah": {
+        "region": "Bey Lah",
+        "main": false
+    },
+    "Find Eskhind~Find Eskhind": {
+        "region": "Bey Lah",
+        "main": false
+    },
+    "Find Eskhind~Deliver News of Eskhind": {
+        "region": "Bey Lah",
+        "main": false
+    },
+    "Love and Fear~Return the Love Sonnet": {
+        "region": "Bey Lah",
+        "main": false
+    },
+    "Kith and Kin~Brief Warden Neelahind": {
+        "region": "Bey Lah",
+        "main": false
+    },
+    "Kith and Kin~Accuse the thief": {
+        "region": "Bey Lah",
+        "main": false
+    }
+}

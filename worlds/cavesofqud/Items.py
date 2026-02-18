@@ -40,10 +40,24 @@ stat_items = [
     "Rapid Mutation Advancement",
 ]
 
+unlock_items = [
+    "Water Farmer Token",
+    "Ancient Knickknack",
+    "Prime Knickknack",
+    "Weirdwire Fusor",
+    "Hindren Token",
+    "Barathrumite Token",
+    "Waydroid Repair Kit",
+    "Kyakukya Token",
+    "Eschaton Transcoder",
+    "Baetyl Optronic Adapter",
+    "Consortium Token"
+]
+
 all_items: Iterable[str] = [
     *stat_items,
     *[i for i in static_items.keys()],
-    *[Quests.quest_unlock_item(name) for name in Quests.main_quests_table.keys()],
+    *unlock_items,
 ]
 
 
@@ -119,14 +133,13 @@ def create_items(world: "CoQWorld"):
     item_pool: List[CoQItem] = []
     total_locations = len(world.multiworld.get_unfilled_locations(world.player))
 
-    # Main quest unlock items
-    for quest in Quests.main_quests(world):
-        item_name = Quests.quest_unlock_item(quest)
+    # Quest unlock items
+    for item in unlock_items:
         item_pool += [
             CoQItem(
-                item_name,
+                item,
                 ItemClassification.progression,
-                world.item_name_to_id[item_name],
+                world.item_name_to_id[item],
                 world.player,
             )
         ]
@@ -151,12 +164,10 @@ def create_any_item_static(world: "CoQWorld", name: str) -> Item:
             else ItemClassification.filler
         )
     elif name in stat_items:
-        classification = ItemClassification.progression
-    elif name in [
-        Quests.quest_unlock_item(name) for name in Quests.main_quests_table.keys()
-    ]:
+        classification = ItemClassification.useful
+    elif name in unlock_items:
         classification = ItemClassification.progression
     else:
-        raise Exception(f"Item {name} couldn't be found in the static table")
+        raise Exception(f"Item {name} couldn't be found in item definitions")
 
     return CoQItem(name, classification, world.item_name_to_id[name], world.player)
