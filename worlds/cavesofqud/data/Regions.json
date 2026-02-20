@@ -1,0 +1,70 @@
+{
+    "Joppa": {
+        "parent": "Menu",
+        "levelStart": 1,
+        "levelEnd": 5
+    },
+    "Red Rock": {
+        "parent": "Joppa",
+        "unlock": "Water Farmer Token"
+    },
+    "Bey Lah": {
+        "parent": "Joppa",
+        "unlock": "Hindren Token"
+    },
+    "Joppa 2": {
+        "parent": "Joppa",
+        "unlock": "Ancient Knickknack"
+    },
+    "Rust Wells": {
+        "parent": "Joppa 2",
+        "unlock": "Prime Knickknack",
+        "levelStart": 6,
+        "levelEnd": 8
+    },
+    "Grit Gate": {
+        "parent": "Rust Wells",
+        "unlock": "Weirdwire Fusor",
+        "levelStart": 9,
+        "levelEnd": 10
+    },
+    "Golgotha": {
+        "parent": "Grit Gate",
+        "unlock": "Barathrumite Token",
+        "levelStart": 11,
+        "levelEnd": 12
+    },
+    "Grit Gate 2": {
+        "parent": "Golgotha",
+        "unlock": "Waydroid Repair Kit",
+        "levelStart": 13,
+        "levelEnd": 15
+    },
+    "Kyakukya": {
+        "parent": "Grit Gate 2",
+        "unlock": "Kyakukya Token"
+    },
+    "Bethesda Susa": {
+        "parent": "Grit Gate 2",
+        "unlock": "Eschaton Transcoder",
+        "levelStart": 16,
+        "levelEnd": 18
+    },
+    "Bethesda Susa 2": {
+        "parent": "Bethesda Susa",
+        "unlock": "Baetyl Optronic Adapter",
+        "levelStart": 19,
+        "levelEnd": 20
+    },
+    "Omonporch": {
+        "parent": "Bethesda Susa 2",
+        "unlock": "Consortium Token",
+        "levelStart": 21,
+        "levelEnd": 25
+    },
+    "Postgame": {
+        "parent": "Omonporch",
+        "levelStart": 26,
+        "levelEnd": 50
+    }
+}

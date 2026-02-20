@@ -6,7 +6,7 @@ from . import Items, Locations, Options, Regions
 class CoQWeb(WebWorld):
     theme = "jungle"
     bug_report_page = (
-        "https://github.com/lonesurv1vor/CavesOfQudArchipelagoRandomizer/issues"
+        "https://github.com/SabreCat/CavesOfQudArchipelagoRandomizer/issues"
     )
 
 

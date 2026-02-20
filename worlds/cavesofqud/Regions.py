@@ -1,69 +1,52 @@
-from typing import TYPE_CHECKING, Callable
+import json
+import pkgutil
+from typing import TYPE_CHECKING, Dict, NamedTuple
 
-from BaseClasses import CollectionState, Entrance, LocationProgressType, Region
+from BaseClasses import LocationProgressType, Region
 
 from . import Items, Locations, Quests
 
 if TYPE_CHECKING:
     from . import CoQWorld
 
+class CoQRegionData(NamedTuple):
+    name: str
+    parent: str
+    unlock: str
+    level_start: int
+    level_end: int
 
-def add_entrance_access_rule(
-    entrance: Entrance, rule: Callable[[CollectionState], bool]
-):
-    existing = entrance.access_rule
-    entrance.access_rule = lambda state: existing(state) and rule(state)
+region_data = pkgutil.get_data(__name__, "data/Regions.json")
+assert region_data is not None
+all_regions: Dict[str, CoQRegionData] = {
+    name: CoQRegionData(
+        name=name,
+        parent=region["parent"],
+        unlock=region["unlock"] if "unlock" in region else "",
+        level_start=region["levelStart"] if "levelStart" in region else 0,
+        level_end=region["levelEnd"] if "levelEnd" in region else 0,
+    )
+    for name, region in json.loads(region_data).items()
+}
 
-
-def level_region_name(level: int) -> str:
-    return f"Level {level}"
-
-
-def level_entrance_name(level: int) -> str:
-    return f"Reach Level {level}"
-
-
-def create_regions(world: "CoQWorld"):
-    menu = Region("Menu", world.player, world.multiworld)
-    world.multiworld.regions += [menu]
-    region = Region(level_region_name(1), world.player, world.multiworld)
-    menu.connect(region, level_entrance_name(1), None)
-
-    for level in range(1, Quests.max_level(world) + 1):
-        # Add Level locations
+def add_level_locations(world: "CoQWorld", region: Region, start: int, end: int):
+    for level in range(start, end):
         for loc_name in Locations.xp_locations(
             level, level + 1, world.options.locations_per_level
         ):
+            if level > Quests.max_level(world): break
             level_loc = Locations.CoQLocation(
                 world.player, loc_name, world.location_name_to_id[loc_name], region
+            )
+            level_loc.access_rule = lambda state, level=level: Items.has_enough_stats_for_level(
+                level, state, world
             )
             level_loc.progress_type = LocationProgressType.DEFAULT
             region.locations += [level_loc]
 
-        next_region = Region(
-            level_region_name(level + 1), world.player, world.multiworld
-        )
-        region.connect(
-            next_region,
-            level_entrance_name(level + 1),
-            lambda state, level=level: Items.has_enough_stats_for_level(
-                level + 1, state, world
-            ),
-        )
-
-        world.multiworld.regions += [region]
-        region = next_region
-
-    add_main_quests(world)
-    add_side_quests(world)
-    add_static_locations(world)
-
-
-def add_main_quests(world: "CoQWorld"):
-    prev_quest_name = None
-    for quest_name in Quests.main_quests(world):
-        quest_level = Quests.main_quests_table[quest_name]
-        region = world.get_region(level_region_name(quest_level))
+def add_quests(world: "CoQWorld"):
+    for quest_name in Quests.quest_keys(world):
+        region = world.get_region(Quests.quest_locations[quest_name].region)
 
         if quest_name == Quests.goal_lookup[world.options.goal]:
             # Add victory event instead of normal location
@@ -77,50 +60,49 @@ def add_main_quests(world: "CoQWorld"):
             quest_loc = Locations.CoQLocation(
                 world.player, quest_name, world.location_name_to_id[quest_name], region
             )
-
-        quest_loc.access_rule = (
-            lambda state,
-            quest_name=quest_name,
-            prev_quest_name=prev_quest_name: state.has(
-                Quests.quest_unlock_item(quest_name), world.player
-            )
-            and state.has(Quests.quest_unlock_item(prev_quest_name), world.player)
-            if prev_quest_name is not None
-            else True
+        quest_loc.access_rule = lambda state, quest_name=quest_name: Items.has_enough_stats_for_level(
+            Quests.quest_locations[quest_name].level, state, world
         )
         quest_loc.progress_type = LocationProgressType.PRIORITY
         region.locations += [quest_loc]
-        entrance = world.get_entrance(level_entrance_name(quest_level + 1))
-        add_entrance_access_rule(
-            entrance,
-            lambda state, quest_name=quest_name: state.has(
-                Quests.quest_unlock_item(quest_name), world.player
-            ),
-        )
-        prev_quest_name = quest_name
-
-
-def add_side_quests(world: "CoQWorld"):
-    for quest_name in Quests.side_quests(world):
-        quest_level = Quests.side_quests_table[quest_name]
-        region = world.get_region(level_region_name(quest_level))
-        quest_loc = Locations.CoQLocation(
-            world.player, quest_name, world.location_name_to_id[quest_name], region
-        )
-        quest_loc.progress_type = LocationProgressType.DEFAULT
-        region.locations += [quest_loc]
-
 
 def add_static_locations(world: "CoQWorld"):
     for quest in [
         k
         for k in Locations.static_locations.values()
-        if k.type == "delivery" or k.type == "lore" or (k.type == "artifact" and world.options.lost_artifacts)
-            and k.min_level <= Quests.max_level(world)
+        if k.type == "delivery" or k.type == "lore"
+           or (k.type == "artifact" and world.options.lost_artifacts)
+           and k.min_level <= Quests.max_level(world)
     ]:
-        region = world.get_region(level_region_name(quest.min_level))
+        region = world.get_region(quest.region)
         quest_loc = Locations.CoQLocation(
             world.player, quest.name, world.location_name_to_id[quest.name], region
         )
-        quest_loc.progress_type = LocationProgressType.DEFAULT
+        quest_loc.access_rule = lambda state, quest=quest: Items.has_enough_stats_for_level(
+            quest.min_level, state, world
+        )
+        quest_loc.progress_type = LocationProgressType.DEFAULT if (quest.type == "delivery"
+            ) else LocationProgressType.PRIORITY
         region.locations += [quest_loc]
+
+def create_regions(world: "CoQWorld"):
+    # Default always-reachable region
+    menu = Region("Menu", world.player, world.multiworld)
+    world.multiworld.regions += [menu]
+
+    # Qud regions, based around quests
+    for region in all_regions.values():
+        new_region = Region(region.name, world.player, world.multiworld)
+        if region.level_start > 0 and region.level_end > 0:
+            add_level_locations(world, new_region, region.level_start, region.level_end)
+        world.multiworld.regions += [new_region]
+        parent_region = world.get_region(region.parent)
+        entrance_name = f"{parent_region.name} to {region.name}"
+        if region.unlock and region.unlock != "":
+            parent_region.connect(new_region, entrance_name, lambda state, region=region:
+                                  state.has(region.unlock, world.player))
+        else:
+            parent_region.connect(new_region, entrance_name)
+    
+    add_quests(world)
+    add_static_locations(world)

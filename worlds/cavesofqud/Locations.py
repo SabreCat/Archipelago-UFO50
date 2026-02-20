@@ -14,8 +14,9 @@ class CoQLocation(Location):
 
 class CoQLocationData(NamedTuple):
     name: str
-    type: str
+    region: str
     min_level: int
+    type: str
 
 
 location_data = pkgutil.get_data(__name__, "data/Locations.json")
@@ -23,8 +24,9 @@ assert location_data is not None
 static_locations: Dict[str, CoQLocationData] = {
     name: CoQLocationData(
         name=name,
-        type=loc["type"],
+        region=loc["region"] if "region" in loc else "Joppa",
         min_level=loc["minLevel"] if "minLevel" in loc else 1,
+        type=loc["type"],
     )
     for name, loc in json.loads(location_data).items()
 }
@@ -44,8 +46,7 @@ def xp_locations(frm: int, to: int, per_level: int) -> Iterable[str]:
 
 
 all_locations: Iterable[str] = itertools.chain(
-    Quests.main_quests_table.keys(),
-    Quests.side_quests_table.keys(),
+    Quests.quest_locations.keys(),
     [name for name, data in static_locations.items()],
     xp_locations(1, Options.MAX_MAX_LEVEL, Options.MAX_LOCATIONS_PER_LEVEL),
 )

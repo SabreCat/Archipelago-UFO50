@@ -1,0 +1,138 @@
+{
+    "Fetch Argyve a Knickknack~Find a Knickknack": {
+        "region": "Joppa",
+        "level": 1
+    },
+    "O Glorious Shekhinah!~Make a Pilgrimage to the Six Day Stilt": {
+        "region": "Joppa",
+        "level": 3
+    },
+    "What's Eating the Watervine?~Travel to Red Rock": {
+        "region": "Red Rock",
+        "level": 3
+    },
+    "What's Eating the Watervine?~Find the Vermin": {
+        "region": "Red Rock",
+        "level": 3
+    },
+    "What's Eating the Watervine?~Get a Corpse": {
+        "region": "Red Rock",
+        "level": 3
+    },
+    "What's Eating the Watervine?~Return with the Corpse": {
+        "region": "Red Rock",
+        "level": 3
+    },
+    "Fetch Argyve a Knickknack~Return to Argyve": {
+        "region": "Joppa 2",
+        "level": 1
+    },
+    "Fetch Argyve Another Knickknack~Find Another Knickknack": {
+        "region": "Joppa 2",
+        "level": 1
+    },
+    "Fetch Argyve Another Knickknack~Return to Argyve": {
+        "region": "Rust Wells",
+        "level": 1
+    },
+    "Weirdwire Conduit... Eureka!~Find 200 Feet of Wire": {
+        "region": "Rust Wells",
+        "level": 5
+    },
+    "Weirdwire Conduit... Eureka!~Return to Argyve": {
+        "region": "Grit Gate",
+        "level": 5
+    },
+    "Petals on the Wind~Investigate Bey Lah": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "Find Eskhind~Find Eskhind": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "Find Eskhind~Deliver News of Eskhind": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "Love and Fear~Return the Love Sonnet": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "Kith and Kin~Brief Warden Neelahind": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "Kith and Kin~Accuse the thief": {
+        "region": "Bey Lah",
+        "level": 10
+    },
+    "A Canticle for Barathrum~Travel to Grit Gate": {
+        "region": "Grit Gate",
+        "level": 10
+    },
+    "A Canticle for Barathrum~Locate the Barathrumite Enclave": {
+        "region": "Grit Gate",
+        "level": 10
+    },
+    "A Canticle for Barathrum~Speak with the Barathrumites": {
+        "region": "Golgotha",
+        "level": 10
+    },
+    "More Than a Willing Spirit~Travel to Golgotha": {
+        "region": "Golgotha",
+        "level": 10
+    },
+    "More Than a Willing Spirit~Find a Dysfunctional Waydroid": {
+        "region": "Golgotha",
+        "level": 12
+    },
+    "More Than a Willing Spirit~Repair the Waydroid": {
+        "region": "Grit Gate 2",
+        "level": 12
+    },
+    "More Than a Willing Spirit~Return to Grit Gate": {
+        "region": "Grit Gate 2",
+        "level": 12
+    },
+    "Raising Indrix~Find Mamon Souldrinker": {
+        "region": "Kyakukya",
+        "level": 15
+    },
+    "Raising Indrix~Recover the Amaranthine Prism": {
+        "region": "Kyakukya",
+        "level": 15
+    },
+    "Decoding the Signal~Get Q Girl's Instructions onto the Data Disk": {
+        "region": "Bethesda Susa",
+        "level": 15
+    },
+    "Decoding the Signal~Locate the Mechanimist Compound at Bethesda Susa": {
+        "region": "Bethesda Susa",
+        "level": 18
+    },
+    "Decoding the Signal~Decode the Signal": {
+        "region": "Bethesda Susa 2",
+        "level": 20
+    },
+    "Decoding the Signal~Return to Grit Gate": {
+        "region": "Bethesda Susa 2",
+        "level": 20
+    },
+    "The Earl of Omonporch~Travel to Omonporch": {
+        "region": "Bethesda Susa 2",
+        "level": 20
+    },
+    "The Earl of Omonporch~Secure the Spindle": {
+        "region": "Omonporch",
+        "level": 22
+    },
+    "The Earl of Omonporch~Return to Grit Gate": {
+        "region": "Omonporch",
+        "level": 25
+    },
+    "A Call to Arms~Defend Grit Gate": {
+        "region": "Omonporch",
+        "level": 25
+    }
+}
